@@ -1,5 +1,62 @@
-.inicial {
-    background-image:url('../images/film.jpg');
-    background-size:cover;
+@media (max-width:500px){
+    .inicial{background-size:auto;}
+    
+}
+
+
+.inicial{
+    background:linear-gradient(-100deg, #272266 , black) ;
+    
+    
+    background-size: cover;   
+
+}
+
+.navbar-codermovies>a{
+
+color:white;
+   
+
+}
+.navbar-navbar_procura{
+    border-radius: 25%;
+    height: 30px;
+    width: auto;
+    text-align: center;
+
+}
+.botoes_menu>a{
+    border: 1px solid white;
+    color:white;
+    /* display: flex; */
+    border-radius: 25%;
+    /* width:fit-content; */
+    background-color: #272266;
+    padding: 20px;
+   display: inline-block;
+   /* margin: 0; */
+   text-align: center;
+   justify-content: center;
+   position: relative;
+   left:400px;
+   top:20px
+   /* align-items: center; */
+}
+.titulo_inicial{
+    color: white;
+    font-size: 5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    position: relative;
+    top:100px;
+}
+.titulo_inicial>a {
+    color: white    ;
+
+}
+
+.imagem_inicial{
+    position: relative;
+    top: 400px;
 
 }
