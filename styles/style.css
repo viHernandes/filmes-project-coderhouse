@@ -60,3 +60,17 @@ color:white;
     top: 400px;
 
 }
+
+
+.generosInicial{
+    background:linear-gradient(-100deg, #272266 , black) ;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+    color: white;
+
+
+}
