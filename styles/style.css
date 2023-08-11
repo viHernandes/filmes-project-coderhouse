@@ -23,8 +23,8 @@ color:white;
     height: 30px;
     width: auto;
     text-align: center;
-
 }
+
 .botoes_menu>a{
     border: 1px solid white;
     color:white;
@@ -42,6 +42,16 @@ color:white;
    top:20px
    /* align-items: center; */
 }
+
+.grid_nav {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-areas: 
+        "topicos_historia topicos_bilheterias topicos_generos  topicos_streamings"
+    ;
+}
+
 .titulo_inicial{
     color: white;
     font-size: 5rem;
