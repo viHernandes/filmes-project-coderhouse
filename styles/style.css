@@ -6,11 +6,19 @@
 
 .inicial{
     background:linear-gradient(-100deg, #272266 , black) ;
+    height: 100vh;
     
-    
-    background-size: cover;   
-
+   
 }
+
+.menus-iniciais{
+    padding-top: 10px;
+    text-align: center;
+}
+.menus-iniciais>a:hover{
+    scale:1.5;
+}
+
 
 .navbar-codermovies>a{
 
@@ -74,8 +82,9 @@ color:white;
 
 .generosInicial{
     background:linear-gradient(-100deg, #272266 , black) ;
-    height: auto;
+    height: 100vh;
     background-repeat: no-repeat;
+
 }
 
 h1{
