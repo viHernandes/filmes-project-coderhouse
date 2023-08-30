@@ -1,0 +1,43 @@
+@font-face {
+    font-family: coderflix;
+    src: url(/assets/BebasNeue-Regular.woff);
+}
+
+body {
+    background-image: linear-gradient(to left, #262163, black);
+    color: white;
+}
+
+.title {
+    font-family: coderflix;
+    color: white;
+}
+
+.image {
+    max-width: 500px;
+}
+
+.final {
+    text-align: center;
+    background-color: rgba(33, 37, 41, 0.5);
+    color: white;
+    padding: 10px;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .movie__title {
+        text-align: center;
+    }
+
+    .movie__picture {
+        margin-bottom: 1rem;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    
+    .movie__text {
+        border-radius: 1rem;
+    }
+}

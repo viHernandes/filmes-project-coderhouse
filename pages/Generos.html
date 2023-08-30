@@ -1,67 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Filmes</title>
- 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel ="stylesheet" href = '../styles/style.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Filmes</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href='../styles/generos.css'>
 </head>
 
 <body class="generosInicial">
-<header >
-<h1>Genêros dos filmes</h1>
-<!-- <img src="../images/drop-down-arrow.png" style="display: flex; position: relative; left: 1840px; width: 30px;"> -->
-      
-</header>
-<nav>
-    <a href="../index.html" style="border: 2px solid white; border-radius: 25%; width: 100px; color: black; background-color: white; text-align: center; align-content: center;">Retornar</a>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../imagens/logo.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./historia-do-cinema.html">História</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bilheterias.html">Bilheterias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./generos.html">Gêneros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./streamings.html">Streamings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-</nav>
+    <div class="container px-4 mt-5 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom text-white title">Gêneros</h2>
 
-<div>
-    <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom text-white">Genêros</h2>
-    
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://cinema10.com.br/upload/noticias/2019-2/3128ebf66b.jpg'); ;">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ação</h3>
-                <ul class="d-flex list-unstyled mt-auto">
-                </ul>
-              </div>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('https://cinema10.com.br/upload/noticias/2019-2/3128ebf66b.jpg'); ;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ação</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+              </ul>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://s.aficionados.com.br/imagens/indiana-jones-0.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Aventura</h3>
-                <ul class="d-flex list-unstyled mt-auto">
-                </ul>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('https://s.aficionados.com.br/imagens/indiana-jones-0.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Aventura</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+              </ul>
             </div>
           </div>
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="font-size: 10px; background-image: url('https://s2.glbimg.com/6bdF931FVRp14rIwXthH_vsxE8k=/e.glbimg.com/og/ed/f/original/2019/09/05/it-chapter-two-box-office-predictions-.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terror</h3>
-                <ul class="d-flex list-unstyled mt-auto">
-                </ul>
-              </div>
-            </div>
-          </div>
-           
-            
+        </div>
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="font-size: 10px; background-image: url('https://s2.glbimg.com/6bdF931FVRp14rIwXthH_vsxE8k=/e.glbimg.com/og/ed/f/original/2019/09/05/it-chapter-two-box-office-predictions-.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terror</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+              </ul>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
+  <footer>
+    <p class="final">Site criador por
+      <a href="https://github.com/Anderson-dev-ti" target="_blank" rel="external" class="link">Anderson Silva</a>
+      e
+      <a href="https://github.com/viHernandes" target="_blank" rel="external" class="link">Victor Hernandes</a>
+      Para o projeto final
+      <a href="https://www.coderhouse.com.br/" target="_blank" rel="external" class="link">Coderhouse</a>
+    </p>
+  </footer>
 
-</div>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
