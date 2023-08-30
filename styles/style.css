@@ -1,95 +1,46 @@
-@media (max-width:500px){
-    .inicial{background-size:auto;}
-    
+@font-face {
+    font-family: coderflix;
+    src: url(/assets/BebasNeue-Regular.woff);
+}
+
+body {
+    background-color: black;
 }
 
 
-.inicial{
-    background:linear-gradient(-100deg, #272266 , black) ;
-    height: 100vh;
-    
-   
-}
-
-.menus-iniciais{
-    padding-top: 10px;
-    text-align: center;
-}
-.menus-iniciais>a:hover{
-    scale:1.5;
-}
-
-
-.navbar-codermovies>a{
-
-color:white;
-   
-
-}
-.navbar-navbar_procura{
-    border-radius: 25%;
-    height: 30px;
-    width: auto;
-    text-align: center;
-}
-
-.botoes_menu>a{
-    border: 1px solid white;
-    color:white;
-    /* display: flex; */
-    border-radius: 25%;
-    /* width:fit-content; */
-    background-color: #272266;
-    padding: 20px;
-   display: inline-block;
-   /* margin: 0; */
-   text-align: center;
-   justify-content: center;
-   position: relative;
-   left:400px;
-   top:20px
-   /* align-items: center; */
-}
-
-.grid_nav {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 20% 20% 20% 20%;
-    grid-template-areas: 
-        "topicos_historia topicos_bilheterias topicos_generos  topicos_streamings"
-    ;
-}
-
-.titulo_inicial{
-    color: white;
-    font-size: 5rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
+.inicial {
+    overflow: hidden;
     position: relative;
-    top:100px;
-}
-.titulo_inicial>a {
-    color: white    ;
-
 }
 
-.imagem_inicial{
+.inicial__bg {
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 100%;
+    max-height: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+.initial_title {
+    font-family: coderflix;
+    color: #DB202C;
+    font-size: 65px;
+}
+
+.imagem_inicial {
     position: relative;
     top: 400px;
-
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .inicial__bg {
 
-.generosInicial{
-    background:linear-gradient(-100deg, #272266 , black) ;
-    height: 100vh;
-    background-repeat: no-repeat;
-
-}
-
-h1{
-    text-align: center;
-    color: white;
-
-
+        height: 110vh;
+    }
 }

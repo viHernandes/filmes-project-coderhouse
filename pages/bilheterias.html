@@ -1,361 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maiores Bilheterias</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to left, #262163, black);
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href='../styles/bilheterias.css'>
 
-        main {
-            margin: auto;
-            max-width: 800px;
-        }
-
-        div {
-            display: flex;
-            margin-bottom: 50px;
-        }
-
-        img {
-            margin-right: 50px
-
-        }
-        h1, p {
-            color: white;
-        }
-
-        a {
-            color: white; text-decoration: none;
-        }
-        a:hover {
-
-            text-decoration: underline;
-            font-weight: bolder;
-        }
-
-        .final {
-
-            text-align: center;
-            background-color: rgba(0, 0, 128, 0.709);
-            color: white;
-            padding: 10px;
-            margin: 100px -8px -80px -8px;
-        }
-
-        .voltar {
-            padding: 10px;
-            font-weight: bolder;
-            display: inline; 
-        }
-
-
-    </style>
 </head>
+
 <body>
-    <main>
-        <h1>10 Maiores Bilheterias da História do Cinema</h1>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="../imagens/logo.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./historia-do-cinema.html">História</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./bilheterias.html">Bilheterias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./generos.html">Gêneros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./streamings.html">Streamings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/vingadores-2012-p.jpg" alt="Capa do filme Os Vingadores (2012)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/vingadores-2012-p.jpg" alt="Capa do filme Os Vingadores (2012)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/vingadores-2012-p.jpg" alt="Capa do filme Os Vingadores (2012)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
-            <p><strong>10. OS VINGADORES (2012)</strong> <br> <br>
+        <main>
+            <h1 class="title my-5 pt-5 text-center">10 Maiores Bilheterias da História do Cinema</h1>
 
-                Arrecadação total: US$ 1,518 bilhão <br>
-                Arrecadação nos EUA: US$ 623,35 milhões (41%) <br>
-                Arrecadação internacional: US$ 895,45 milhões (59%) <br>
-                Arrecadação no Brasil: US$ 63,9 milhões <br>
-                Arrecadação na China: US$ 86,3 milhões <br>
-                Custo de produção: US$ 220 milhões <br> <br>
+            <div class="container-fluid">
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/vingadores-2012-p.jpg"
+                            alt="Capa do filme Os Vingadores (2012)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">10. OS VINGADORES (2012)</h4>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 1,518 bilhão</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 623,35 milhões (41%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 895,45 milhões (59%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 63,9 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 86,3 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 220 milhões</span>
 
-                Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de dentro das instalações da S.H.I.E.L.D. Nick Fury, o diretor desta agência internacional que mantém a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças sem precedentes. Homem de Ferro, Capitão América, Hulk, Thor, Viúva Negra e Gavião Arqueiro formam o time dos sonhos de Fury, mas eles precisam aprender a colocar os egos de lado e agir como um grupo em prol da humanidade.
-                </p>
-        </div>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/o.rei.leao-p.jpg" alt="Capa do filme o Rei Leão (2019)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/o.rei.leao-p.jpg" alt="Capa do filme o Rei Leão (2019)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/o.rei.leao-p.jpg" alt="Capa do filme o Rei Leão (2019)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                        <p>Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de dentro
+                            das instalações da S.H.I.E.L.D. Nick Fury, o diretor desta agência internacional que mantém
+                            a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças
+                            sem precedentes. Homem de Ferro, Capitão América, Hulk, Thor, Viúva Negra e Gavião Arqueiro
+                            formam o time dos sonhos de Fury, mas eles precisam aprender a colocar os egos de lado e
+                            agir como um grupo em prol da humanidade.
+                        </p>
+                    </div>
+                </div>
 
-            <p>
-                <strong>9. O REI LEÃO (2019)</strong> <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/o.rei.leao-p.jpg"
+                            alt="Capa do filme o Rei Leão (2019)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">9. O REI LEÃO (2019)</h4>
 
-                Arrecadação total: US$ 1,662 bilhão <br>
-                Arrecadação nos EUA: US$ 543,63 milhões (32,8%) <br>
-                Arrecadação internacional: US$ 1,119 bilhão (67,2%) <br>
-                Arrecadação no Brasil: US$ 69,48 milhões <br>
-                Arrecadação na China: US$ 120,44 milhões <br>
-                Custo de produção: US$ 260 milhões <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 1,662 bilhão</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 543,63 milhões (32,8%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,119 bilhão (67,2%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 69,48 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 120,44 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 260 milhões</span>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                Traído e exilado de seu reino, o leãozinho Simba precisa descobrir como crescer e retomar seu destino como herdeiro real nas planícies da savana africana.
-            </p>
-        </div>
+                        <p>Traído e exilado de seu reino, o leãozinho Simba precisa descobrir como crescer e
+                            retomar seu destino como herdeiro real nas planícies da savana africana.
+                        </p>
+                    </div>
+                </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/jurassic-world-p.jpg" alt="Capa do filme Jurassic World (2015)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/jurassic-world-p.jpg" alt="Capa do filme Jurassic World (2015)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/jurassic-world-p.jpg" alt="Capa do filme Jurassic World (2015)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
-            <p>
-                <strong>8. JURASSIC WORLD: O MUNDO DOS DINOSSAUROS (2015)</strong> <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/jurassic-world-p.jpg"
+                            alt="Capa do filme Jurassic World (2015)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">8. JURASSIC WORLD: O MUNDO DOS DINOSSAUROS (2015)</h4>
 
-                Arrecadação total: US$ 1,67 bilhão <br>
-                Arrecadação nos EUA: US$ 652,27 milhões (39%) <br>
-                Arrecadação internacional: US$ 1,018 bilhão (61%) <br>
-                Arrecadação no Brasil: US$ 29 milhões <br>
-                Arrecadação na China: US$ 228,74 milhões <br>
-                Custo de produção: US$ 150 milhões  <br> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 1,67 bilhão</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 652,27 milhões (39%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,018 bilhão (61%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 29 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 228,74 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 150 milhões</span>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                O Parque dos Dinossauros está aberto para visitação, e o público tem a chance de ver de perto as mais diversas espécies. Porém, um desses animais, resultado de experiência genética, desenvolve alta inteligência e se torna uma ameaça para todos.
-            </p>
-        </div>
+                        <p>O Parque dos Dinossauros está aberto para visitação, e o público tem a chance de
+                            ver de perto as mais diversas espécies. Porém, um desses animais, resultado de
+                            experiência genética, desenvolve alta inteligência e se torna uma ameaça para
+                            todos.
+                        </p>
+                    </div>
+                </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/homem-aranha-p.jpeg" alt="Capa do Filme Homem-Aranha: Sem volta pra casa (2021)"> <br> <br>
-=======
-        <div class="container_flexbox">
-            <img src="imagens/homem-aranha-p.jpeg" alt="Capa do Filme Homem-Aranha: Sem volta pra casa (2021)"> <br> <br>
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/homem-aranha-p.jpeg" alt="Capa do Filme Homem-Aranha: Sem volta pra casa (2021)"> <br> <br>
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/homem-aranha-p.jpeg"
+                            alt="Capa do Filme Homem-Aranha: Sem volta pra casa (2021)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">7. HOMEM-ARANHA: SEM VOLTA PARA CASA (2021)</h4>
 
-            <p>
-                <strong>7. HOMEM-ARANHA: SEM VOLTA PARA CASA (2021)</strong> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 1,832 bilhão</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 772,17 milhões (42,2%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,060 bilhão (57,8%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 55,4 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: Não lançado no país</span>
+                        <span class="row ms-0">Custo de produção: US$ 200 milhões</span>
 
-                Arrecadação total: US$ 1,832 bilhão <br>
-                Arrecadação nos EUA: US$ 772,17 milhões (42,2%) <br>
-                Arrecadação internacional: US$ 1,060 bilhão (57,8%) <br>
-                Arrecadação no Brasil: US$ 55,4 milhões <br>
-                Arrecadação na China: Não lançado no país <br>
-                Custo de produção: US$ 200 milhões <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <p>Peter Parker tem a sua identidade secreta revelada e pede ajuda ao
+                            Doutor Estranho. Quando um feitiço para reverter o evento não sai como o
+                            esperado, o Homem-Aranha e seu companheiro dos Vingadores precisam
+                            enfrentar inimigos de todo o multiverso.
+                        </p>
+                    </div>
+                </div>
 
-                Peter Parker tem a sua identidade secreta revelada e pede ajuda ao Doutor Estranho. Quando um feitiço para reverter o evento não sai como o esperado, o Homem-Aranha e seu companheiro dos Vingadores precisam enfrentar inimigos de todo o multiverso.
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/vingadores-guerra-infinita-p.jpg"
+                            alt="Capa do filme Vingadores Guerra Infinita (2018)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">6. VINGADORES: GUERRA INFINITA (2018)</h4>
 
-            </p>
-        </div>
+                        <span class="row ms-0">Arrecadação total: US$ 2,048 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 678,81 milhões (33.2%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,36 bilhão (66.8%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 66,64 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 359,54 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 400 milhões (dividido com Vingadores:
+                            Ultimato)</span>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/vingadores-guerra-infinita-p.jpg" alt="Capa do filme Vingadores Guerra Infinita (2018)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/vingadores-guerra-infinita-p.jpg" alt="Capa do filme Vingadores Guerra Infinita (2018)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/vingadores-guerra-infinita-p.jpg" alt="Capa do filme Vingadores Guerra Infinita (2018)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-            <p>
-                <strong>6. VINGADORES: GUERRA INFINITA (2018)</strong> <br> <br>
+                        <p>Homem de Ferro, Capitão América, Thor, Hulk e os Vingadores se
+                            unem para combater o maligno Thanos. Em uma missão para coletar
+                            todas as seis pedras infinitas, Thanos planeja usá-las para
+                            infligir sua vontade maléfica sobre a humanidade.
+                        </p>
+                    </div>
+                </div>
 
-                Arrecadação total: US$ 2,048 bilhões <br>
-                Arrecadação nos EUA: US$ 678,81 milhões (33.2%) <br>
-                Arrecadação internacional: US$ 1,36 bilhão (66.8%) <br>
-                Arrecadação no Brasil: US$ 66,64 milhões <br>
-                Arrecadação na China: US$ 359,54 milhões <br>
-                Custo de produção: US$ 400 milhões (dividido com Vingadores: Ultimato) <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/star-wars-p.jpg"
+                            alt="Capda do filme Star Wars o Despertar da Força (2015)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">5. STAR WARS: O DESPERTAR DA FORÇA
+                            (2015)</h4>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 2,069 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 936,66 milhões (45,3%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,13 bilhão (54,7%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 27,81 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 124,15 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 245 milhões</span>
 
-                Homem de Ferro, Capitão América, Thor, Hulk e os Vingadores se unem para combater o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a humanidade.
-            </p>
-        </div>
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/star-wars-p.jpg" alt="Capda do filme Star Wars o Despertar da Força (2015)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/star-wars-p.jpg" alt="Capda do filme Star Wars o Despertar da Força (2015)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/star-wars-p.jpg" alt="Capda do filme Star Wars o Despertar da Força (2015)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
-            
-            <p>
-                <strong>5. STAR WARS: O DESPERTAR DA FORÇA (2015)</strong> <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                Arrecadação total: US$ 2,069 bilhões <br>
-                Arrecadação nos EUA: US$ 936,66 milhões (45,3%) <br>
-                Arrecadação internacional: US$ 1,13 bilhão (54,7%) <br>
-                Arrecadação no Brasil: US$ 27,81 milhões <br>
-                Arrecadação na China: US$ 124,15 milhões <br>
-                Custo de produção: US$ 245 milhões <br> <br>
+                        <p>
+                            A queda de Darth Vader e do Império levou ao surgimento
+                            de uma nova força sombria: a Primeira Ordem. Eles
+                            procuram o jedi Luke Skywalker, desaparecido. A
+                            resistência tenta desesperadamente encontrá-lo antes
+                            para salvar a galáxia.
+                        </p>
+                    </div>
+                </div>
 
-                <strong>Sinopse</strong> <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/titanic-p.jpg"
+                            alt="Capa do Filme Titanic (1997)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">4. TITANIC (1997)</h4>
 
-                A queda de Darth Vader e do Império levou ao surgimento de uma nova força sombria: a Primeira Ordem. Eles procuram o jedi Luke Skywalker, desaparecido. A resistência tenta desesperadamente encontrá-lo antes para salvar a galáxia.
-            </p>
-        </div>
+                        <span class="row ms-0">Arrecadação total: US$ 2,245 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 672,44 milhões (30%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,573 bilhão
+                            (70%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 70,46 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 145 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 200 milhões</span>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/titanic-p.jpg" alt="Capa do Filme Titanic (1997)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/titanic-p.jpg" alt="Capa do Filme Titanic (1997)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/titanic-p.jpg" alt="Capa do Filme Titanic (1997)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-            <p>
-                <strong>4. TITANIC (1997)</strong> <br> <br>
+                        <p>
+                            Um artista pobre e uma jovem rica se conhecem e
+                            se apaixonam na fatídica viagem inaugural do
+                            Titanic em 1912. Embora esteja noiva do
+                            arrogante herdeiro de uma siderúrgica, a jovem
+                            desafia sua família e amigos em busca do
+                            verdadeiro amor.
+                        </p>
+                    </div>
+                </div>
 
-                Arrecadação total: US$ 2,245 bilhões <br>
-                Arrecadação nos EUA: US$ 672,44 milhões (30%) <br>
-                Arrecadação internacional: US$ 1,573 bilhão (70%) <br>
-                Arrecadação no Brasil: US$ 70,46 milhões <br>
-                Arrecadação na China: US$ 145 milhões <br>
-                Custo de produção: US$ 200 milhões <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/avatar2-p.jpg"
+                            alt="Capa do Filme AVATAR: O CAMINHO DA ÁGUA (2022)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">3. AVATAR: O CAMINHO DA ÁGUA
+                            (2022)</h4>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 2,247 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 659 milhões</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,588
+                            bilhão</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 45,32 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 243,84 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 250 milhões</span>
 
-                Um artista pobre e uma jovem rica se conhecem e se apaixonam na fatídica viagem inaugural do Titanic em 1912. Embora esteja noiva do arrogante herdeiro de uma siderúrgica, a jovem desafia sua família e amigos em busca do verdadeiro amor.
-            </p>
-        </div>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/avatar2-p.jpg" alt="Capa do Filme AVATAR: O CAMINHO DA ÁGUA (2022)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/avatar2-p.jpg" alt="Capa do Filme AVATAR: O CAMINHO DA ÁGUA (2022)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/avatar2-p.jpg" alt="Capa do Filme AVATAR: O CAMINHO DA ÁGUA (2022)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                        <p>
+                            Após formar uma família, Jake Sully e
+                            Ney'tiri fazem de tudo para ficarem
+                            juntos. No entanto, eles devem sair de
+                            casa e explorar as regiões de Pandora
+                            quando uma antiga ameaça ressurge, e
+                            Jake deve travar uma guerra difícil
+                            contra os humanos.
+                        </p>
+                    </div>
+                </div>
 
-            <p>
-                <strong>3. AVATAR: O CAMINHO DA ÁGUA (2022)</strong> <br> <br>
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/vingadores-ultimato-p.jpg"
+                            alt=" Capa do filme Vingadores Ultimato (2019)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">2. VINGADORES: ULTIMATO (2019)</h4>
 
-                Arrecadação total: US$ 2,247 bilhões <br>
-                Arrecadação nos EUA: US$ 659 milhões <br>
-                Arrecadação internacional: US$ 1,588 bilhão <br> 
-                Arrecadação no Brasil: US$ 45,32 milhões <br>
-                Arrecadação na China: US$ 243,84 milhões <br>
-                Custo de produção: US$ 250 milhões <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 2,797 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 858,3 milhões (30,7%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 1,939 bilhão (69,3%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 85,66 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 614,3 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 400 milhões (dividido com Vingadores: Guerra
+                            Infinita)</span>
 
-                <strong>Sinopse</strong> <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma guerra difícil contra os humanos.
-            </p>
-        </div>
+                        <p>
+                            Após Thanos eliminar metade das
+                            criaturas vivas, os Vingadores
+                            têm de lidar com a perda de
+                            amigos e entes queridos. Com
+                            Tony Stark vagando perdido no
+                            espaço sem água e comida, Steve
+                            Rogers e Natasha Romanov lideram
+                            a resistência contra o titã
+                            louco.
+                        </p>
+                    </div>
+                </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/vingadores-ultimato-p.jpg" alt=" Capa do filme Vingadores Ultimato (2019)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/vingadores-ultimato-p.jpg" alt=" Capa do filme Vingadores Ultimato (2019)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/vingadores-ultimato-p.jpg" alt=" Capa do filme Vingadores Ultimato (2019)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
+                <div class="row justify-content-center align-items-stretch my-5">
+                    <div class="col-12 col-md-auto movie__picture">
+                        <img class="movie__picture--border" src="../imagens/avatar-p.jpg"
+                            alt="Capa do Filme Avatar (2009)">
+                    </div>
+                    <div class="col-11 col-md-6 movie__text">
+                        <h4 class="mt-3 movie__title">1. AVATAR (2009)</h4>
 
-            <p>
-                <strong>2. VINGADORES: ULTIMATO (2019)</strong> <br> <br>
+                        <span class="row ms-0">Arrecadação total: US$ 2,847 bilhões</span>
+                        <span class="row ms-0">Arrecadação nos EUA: US$ 760,5 milhões (26,7%)</span>
+                        <span class="row ms-0">Arrecadação internacional: US$ 2,086 bilhões (73,3%)</span>
+                        <span class="row ms-0">Arrecadação no Brasil: US$ 58,21 milhões</span>
+                        <span class="row ms-0">Arrecadação na China: US$ 204 milhões</span>
+                        <span class="row ms-0">Custo de produção: US$ 237 milhões</span>
 
-                Arrecadação total: US$ 2,797 bilhões <br>
-                Arrecadação nos EUA: US$ 858,3 milhões (30,7%) <br>
-                Arrecadação internacional: US$ 1,939 bilhão (69,3%) <br>
-                Arrecadação no Brasil: US$ 85,66 milhões <br>
-                Arrecadação na China: US$ 614,3 milhões <br>
-                Custo de produção: US$ 400 milhões (dividido com Vingadores: Guerra Infinita) <br> <br>
+                        <h5 class="mt-3 movie__title">Sinopse</h5>
 
-                <strong>Sinopse</strong> <br> <br>
-
-                Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.
-            </p>
-        </div>
-
-<<<<<<< HEAD
-<<<<<<< HEAD:pages/bilheterias.html
-        <div>
-            <img src="../imagens/avatar-p.jpg" alt="Capa do Filme Avatar (2009)">
-=======
-        <div class="container_flexbox">
-            <img src="imagens/avatar-p.jpg" alt="Capa do Filme Avatar (2009)">
->>>>>>> branch-atual:bilheterias.html
-=======
-        <div>
-            <img src="../imagens/avatar-p.jpg" alt="Capa do Filme Avatar (2009)">
->>>>>>> 59d0ad17dc324ee00de01b126c9518935ea0aea7
-
-            <p>
-                <strong>1. AVATAR (2009)</strong> <br> <br>
-
-                Arrecadação total: US$ 2,847 bilhões <br>
-                Arrecadação nos EUA: US$ 760,5 milhões (26,7%) <br>
-                Arrecadação internacional: US$ 2,086 bilhões (73,3%) <br>
-                Arrecadação no Brasil: US$ 58,21 milhões <br>
-                Arrecadação na China: US$ 204 milhões <br>
-                Custo de produção: US$ 237 milhões <br> <br>
-
-                <strong>Sinopse</strong> <br> <br>
-
-                No exuberante mundo alienígena de Pandora vivem os Na'vi, seres que parecem ser primitivos, mas são altamente evoluídos. Como o ambiente do planeta é tóxico, foram criados os avatares, corpos biológicos controlados pela mente humana que se movimentam livremente em Pandora. Jake Sully, um ex-fuzileiro naval paralítico, volta a andar através de um avatar e se apaixona por uma Na'vi. Esta paixão leva Jake a lutar pela sobrevivência de Pandora.
-
-            </p>
-        </div>
-        
-        <a href="../index.html" rel="prev">
-            <p class="voltar">Voltar</p>
-        </a>                    
-    </main>
+                        <p>
+                            No exuberante mundo alienígena de Pandora vivem os Na'vi, seres que parecem ser primitivos,
+                            mas são altamente evoluídos. Como o ambiente do planeta é tóxico, foram criados os avatares,
+                            corpos biológicos controlados pela mente humana que se movimentam livremente em Pandora.
+                            Jake Sully, um ex-fuzileiro naval paralítico, volta a andar através de um avatar e se
+                            apaixona por uma Na'vi. Esta paixão leva Jake a lutar pela sobrevivência de Pandora.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     <footer>
-        <p class="final">Site criador por <a href="https://github.com/Anderson-dev-ti" target="_blank" rel="external" class="link">Anderson Silva</a> e <a href="https://github.com/viHernandes" target="_blank" rel="external" class="link">Victor Hernandes</a> Para o projeto final <a href="https://www.coderhouse.com.br/" target="_blank" rel="external" class="link">Coderhouse</a></p>
+        <p class="final">Site criador por 
+            <a href="https://github.com/Anderson-dev-ti" target="_blank" rel="external" class="link">Anderson Silva</a>
+             e 
+            <a href="https://github.com/viHernandes" target="_blank" rel="external" class="link">Victor Hernandes</a>
+             Para o projeto final 
+            <a href="https://www.coderhouse.com.br/" target="_blank" rel="external" class="link">Coderhouse</a></p>
     </footer>
 
-    
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
