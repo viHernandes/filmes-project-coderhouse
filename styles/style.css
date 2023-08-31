@@ -1,6 +1,6 @@
 @font-face {
     font-family: coderflix;
-    src: url(/assets/BebasNeue-Regular.woff);
+    src: url(https://raw.githubusercontent.com/viHernandes/filmes-project-coderhouse/main/assets/BebasNeue-Regular.woff);
 }
 
 body {
