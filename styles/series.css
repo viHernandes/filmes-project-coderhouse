@@ -1,0 +1,36 @@
+@font-face {
+    font-family: coderflix;
+    src: url(/assets/BebasNeue-Regular.woff);
+}
+
+body {
+    background-image: linear-gradient(to left, #262163, black);
+}
+
+.title {
+    font-family: coderflix;
+    color: white;
+}
+
+.series__image {
+    width: 200px;
+}
+
+.tile__image:hover {
+    opacity: 0.8;
+}
+
+.final {
+    text-align: center;
+    background-color: rgba(33, 37, 41, 0.5);
+    color: white;
+    padding: 10px;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    .tile {
+        margin: 0 1px 0 1px;
+    }
+}
