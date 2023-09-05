@@ -9,6 +9,7 @@ const movieBudget = document.querySelector(".movie__budget");
 const movieTagline = document.querySelector(".movie__tagline");
 const movieRuntime = document.querySelector(".movie__runtime");
 const movieSpoken = document.querySelector(".movie__spoken");
+const alternativesParent = document.querySelector(".alternatives");
 
 const language = {
     "English": "Inglês",
@@ -27,6 +28,8 @@ const language = {
     "Swedish": "Sueco",
     "Arabic": "Árabe",
 }
+
+let movieName = "";
 
 const getMovies = async () => {
     rNum = Math.floor(Math.random() * 500) + 1;
@@ -80,19 +83,56 @@ const shuffle = (array) => {
     return array;
 };
 
+const createElement = (tag, className) => {
+    const element = document.createElement(tag);
+    element.className = className;
+    return element;
+}
+
+
+const createAlternative = (item) => {
+    const alternative = createElement('button', 'alternative btn btn-outline-light w-100 text-start my-1');
+    alternative.innerHTML = item;
+    alternative.addEventListener('click', checkAnswer);
+
+    return alternative;
+}
+
+const checkAnswer = () => {
+    const alternative = document.querySelectorAll(".alternative");
+    const answer = document.querySelector(".answer");
+
+    alternative.forEach(element => {
+        if(element.innerHTML === movieName) {
+            element.classList.remove('btn-outline-light');
+            element.classList.add('btn-success');
+        }else {
+            element.classList.remove('btn-outline-light');
+            element.classList.add('btn-danger');
+        }
+    });
+
+    alternativesParent.classList.add('col-md-6');
+    answer.style.display = "block";
+    const retry = createElement('button', 'btn btn-primary w-100 my-1');
+    answer.appendChild(retry);
+    retry.innerHTML = "Jogar Novamente"
+    retry.addEventListener("click", resetGame)
+}
+
 const movieData = async () => {
     const res = await getMovies();
+    movieName = res.title;
     const movie = await getMovieById(res.id);
     const similar = await getSimilarMovies(res.id);
-    const alternatives = [movie.title, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
+    const alternatives = [movieName, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
     const shuffledArray = shuffle(alternatives);
     movieBackdrop.innerHTML = '<img class="movie__backdropImage" src="https://www.themoviedb.org/t/p/original' + movie.backdrop_path + '" alt="selected_movie"/>';
-    document.querySelector(".movie__alternative1").innerHTML = '<p><span class="fw-bold">A: </span>' + shuffledArray[0] + '</p>';
-    document.querySelector(".movie__alternative2").innerHTML = '<p><span class="fw-bold">B: </span>' + shuffledArray[1] + '</p>';
-    document.querySelector(".movie__alternative3").innerHTML = '<p><span class="fw-bold">C: </span>' + shuffledArray[2] + '</p>';
-    document.querySelector(".movie__alternative4").innerHTML = '<p><span class="fw-bold">D: </span>' + shuffledArray[3] + '</p>';
-    document.querySelector(".movie__alternative5").innerHTML = '<p><span class="fw-bold">E: </span>' + shuffledArray[4] + '</p>';
-    
+    shuffledArray.forEach(item => {
+        const alternative = createAlternative(item);
+        alternativesParent.appendChild(alternative)
+    });
+
     movieTitle.innerHTML = '<p><span class="fw-bold">Título: </span>' + movie.title + '</p>';
 
     if (movie.overview !== "") {
@@ -111,6 +151,10 @@ const movieData = async () => {
     }
     movieRuntime.innerHTML = '<p><span class="fw-bold">Duração: </span>' + movie.runtime + ' minutos</p>';
     movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + language[movie.spoken_languages[0].english_name] + '</p>';
+}
+
+const resetGame = () => {
+    location.reload();
 }
 
 window.onload = () => {
