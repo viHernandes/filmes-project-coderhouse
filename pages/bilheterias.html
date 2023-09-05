@@ -8,46 +8,47 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href='../styles/bg-effect.css'>
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href='../styles/bilheterias.css'>
 
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="../imagens/logo.png" alt="Logo" width="100" class="d-inline-block align-text-top">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./historia-do-cinema.html">História</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="./bilheterias.html">Bilheterias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./generos.html">Gêneros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./series.html">Séries Populares</a>
-                            </li>
-                        </ul>
-                    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../imagens/logo.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./historia-do-cinema.html">História do Cinema</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./bilheterias.html">Maiores Bilheterias</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="./series.html">Séries Populares</a>
+                        </li>
+<li class="nav-item">
+                            <a class="nav-link" href="./quiz.html">Quiz</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <main>
+        <main class="main">
             <h1 class="title my-5 pt-5 text-center">10 Maiores Bilheterias da História do Cinema</h1>
 
             <div class="container-fluid">
@@ -325,19 +326,24 @@
                 </div>
             </div>
         </main>
-    </div>
-    <footer>
-        <p class="final">Site criador por 
-            <a href="https://github.com/Anderson-dev-ti" target="_blank" rel="external" class="link">Anderson Silva</a>
-             e 
-            <a href="https://github.com/viHernandes" target="_blank" rel="external" class="link">Victor Hernandes</a>
-             Para o projeto final 
-            <a href="https://www.coderhouse.com.br/" target="_blank" rel="external" class="link">Coderhouse</a></p>
-    </footer>
+        <footer class="footer text-white text-center pt-2 px-1 pb-1">
+            <p class="">Desenvolvido pelo <a class="text-decoration-none text-danger fs-bold"
+                href="https://github.com/juan-silveira/projeto-coderhouse-turma-45415" target="_blank"><strong>Grupo
+                  1</strong></a> da turma 45415 do curso de Desenvolvimento Web da
+              <strong>CoderHouse</strong> Brasil
+            </p>
+          </footer>
+        
+          <div class="bg"></div>
+          <div class="star-field">
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

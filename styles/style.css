@@ -1,19 +1,22 @@
+:root {
+    
+}
+
 @font-face {
     font-family: coderflix;
     src: url(https://raw.githubusercontent.com/viHernandes/filmes-project-coderhouse/main/assets/BebasNeue-Regular.woff);
 }
 
 body {
-    background-color: black;
+    background-image: linear-gradient(to left, #262163, black);
 }
 
-
-.inicial {
+.initial {
     overflow: hidden;
     position: relative;
 }
 
-.inicial__bg {
+.initial__bg {
     opacity: 0.3;
     position: absolute;
     width: 100%;
@@ -27,15 +30,24 @@ body {
     position: relative;
 }
 
-.initial_title {
+.initial__title {
     font-family: coderflix;
     color: #DB202C;
     font-size: 65px;
 }
 
-.imagem_inicial {
+.main {
     position: relative;
-    top: 400px;
+    min-height: calc(100vh - 100px);
+}
+
+.title {
+    font-family: coderflix;
+    color: white;
+}
+
+.footer {
+    background-color: rgba(33, 37, 41, 0.5);
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
