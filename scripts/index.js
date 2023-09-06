@@ -1,5 +1,6 @@
-onclick="window.location.href ='https://github.com/viHernandes/filmes-project-coderhouse' "
+const github = document.getElementById("github-button");
 
-document.getElementById("github-button").onclick = () => {
-    window.open('https://github.com/viHernandes/filmes-project-coderhouse', '_blank');
+github.onclick = () => {
+    github.href = 'https://github.com/viHernandes/filmes-project-coderhouse';
+    alert("Botão clicado!")
 }
