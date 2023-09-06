@@ -32,39 +32,3 @@ https://www.themoviedb.org/t/p/original/pbrkL804c8yAv3zBZR4QPEafpAR.jpg
 https://www.youtube.com/watch?v=BYUZhddDbdc
 
 https://api.themoviedb.org/3/tv/1399/season/1/watch/providers?api_key=818306944e112ccf75d496086ac6c42e&language=pt-BR
-
-
-let similarMovies = [];
-const getSimilarMovies = async (id) => {
-    page = 1;
-    let maxPages = 0;
-    const pages = await fetch('https://api.themoviedb.org/3/movie/' + id + '/similar?api_key=818306944e112ccf75d496086ac6c42e&language=pt-BR&page=');
-
-    if (pages.status === 200) {
-        const dataPages = await pages.json();
-        maxPages = dataPages.total_pages;
-    }
-    
-    while (similarMovies.length < 4) {
-        console.log(page)
-        console.log(similarMovies);
-        const response = await fetch('https://api.themoviedb.org/3/movie/' + id + '/similar?api_key=818306944e112ccf75d496086ac6c42e&language=pt-BR&page=' + page);
-
-        if (response.status === 200) {
-            const res = await response.json();
-            let data = res.results;
-            data.forEach(movie => {
-                sumGen = 0;
-                movie.genre_ids.forEach(id => {
-                    sumGen = sumGen + id;
-                });
-                if (sumGen === genres) {
-                    similarMovies.push(movie.title);
-                }
-            });
-        }
-        page += page;
-    }
-    // console.log(similarMovies);
-    return false;
-}

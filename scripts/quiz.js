@@ -42,7 +42,7 @@ const getMovies = async () => {
         while (data.results[rPos].backdrop_path === null) {
             rPos += rPos;
         }
-        console.log(data.results[rPos]);
+        // console.log(data.results[rPos]);
         return data.results[rPos];
     }
     return false;
@@ -54,7 +54,7 @@ const getMovieById = async (id) => {
     if (response.status === 200) {
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
         return data;
     }
     return false;
@@ -103,10 +103,10 @@ const checkAnswer = () => {
     const answer = document.querySelector(".answer");
 
     alternative.forEach(element => {
-        if(element.innerHTML === movieName) {
+        if (element.innerHTML === movieName) {
             element.classList.remove('btn-outline-light');
             element.classList.add('btn-success');
-        }else {
+        } else {
             element.classList.remove('btn-outline-light');
             element.classList.add('btn-danger');
         }
@@ -121,36 +121,39 @@ const checkAnswer = () => {
 }
 
 const movieData = async () => {
-    const res = await getMovies();
-    movieName = res.title;
-    const movie = await getMovieById(res.id);
-    const similar = await getSimilarMovies(res.id);
-    const alternatives = [movieName, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
-    const shuffledArray = shuffle(alternatives);
-    movieBackdrop.innerHTML = '<img class="movie__backdropImage" src="https://www.themoviedb.org/t/p/original' + movie.backdrop_path + '" alt="selected_movie"/>';
-    shuffledArray.forEach(item => {
-        const alternative = createAlternative(item);
-        alternativesParent.appendChild(alternative)
-    });
+    try {
+        const res = await getMovies();
+        movieName = res.title;
+        const movie = await getMovieById(res.id);
+        const similar = await getSimilarMovies(res.id);
+        const alternatives = [movieName, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
+        const shuffledArray = shuffle(alternatives);
+        movieBackdrop.innerHTML = '<img class="movie__backdropImage" src="https://www.themoviedb.org/t/p/original' + movie.backdrop_path + '" alt="selected_movie"/>';
+        shuffledArray.forEach(item => {
+            const alternative = createAlternative(item);
+            alternativesParent.appendChild(alternative)
+        });
+        movieTitle.innerHTML = '<p><span class="fw-bold">Título: </span>' + movie.title + '</p>';
 
-    movieTitle.innerHTML = '<p><span class="fw-bold">Título: </span>' + movie.title + '</p>';
-
-    if (movie.overview !== "") {
-        movieOverview.innerHTML = '<p><span class="fw-bold">Sinopse: </span>' + movie.overview + '</p>';
+        if (movie.overview !== "") {
+            movieOverview.innerHTML = '<p><span class="fw-bold">Sinopse: </span>' + movie.overview + '</p>';
+        }
+        if (movie.tagline !== "") {
+            movieTagline.innerHTML = '<p><span class="fw-bold">Tagline: </span>' + movie.tagline + '</p>';
+        }
+        let movieDate = movie.release_date.split("-");
+        movieRelease.innerHTML = '<p><span class="fw-bold">Data de Lançamento: </span>' + movieDate[2] + '/' + movieDate[1] + '/' + movieDate[0] + '</p>';
+        if (movie.budget !== 0) {
+            movieBudget.innerHTML = '<p><span class="fw-bold">Orçamento: </span>' + movie.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); + '</p>';
+        }
+        if (movie.revenue !== 0) {
+            movieRevenue.innerHTML = '<p><span class="fw-bold">Bilheteria: </span>' + movie.revenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); + '</p>';
+        }
+        movieRuntime.innerHTML = '<p><span class="fw-bold">Duração: </span>' + movie.runtime + ' minutos</p>';
+        movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + language[movie.spoken_languages[0].english_name] + '</p>';
+    } catch (err) {
+        location.reload();
     }
-    if (movie.tagline !== "") {
-        movieTagline.innerHTML = '<p><span class="fw-bold">Tagline: </span>' + movie.tagline + '</p>';
-    }
-    let movieDate = movie.release_date.split("-");
-    movieRelease.innerHTML = '<p><span class="fw-bold">Data de Lançamento: </span>' + movieDate[2] + '/' + movieDate[1] + '/' + movieDate[0] + '</p>';
-    if (movie.budget !== 0) {
-        movieBudget.innerHTML = '<p><span class="fw-bold">Orçamento: </span>' + movie.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); + '</p>';
-    }
-    if (movie.revenue !== 0) {
-        movieRevenue.innerHTML = '<p><span class="fw-bold">Bilheteria: </span>' + movie.revenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); + '</p>';
-    }
-    movieRuntime.innerHTML = '<p><span class="fw-bold">Duração: </span>' + movie.runtime + ' minutos</p>';
-    movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + language[movie.spoken_languages[0].english_name] + '</p>';
 }
 
 const resetGame = () => {
