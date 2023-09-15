@@ -1,8 +1,13 @@
 .movie__backdropImage {
     width: 100%;
-    /* max-width: 1024px; */
 }
 
-.answer {
+.movie_data {
     display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .movie_data {
+        margin-top: 1rem;
+    }
 }
