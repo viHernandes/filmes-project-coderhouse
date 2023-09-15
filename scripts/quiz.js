@@ -10,6 +10,7 @@ const movieTagline = document.querySelector(".movie__tagline");
 const movieRuntime = document.querySelector(".movie__runtime");
 const movieSpoken = document.querySelector(".movie__spoken");
 const alternativesParent = document.querySelector(".alternatives");
+const loading = document.getElementById("loading");
 
 const language = {
     "English": "Inglês",
@@ -93,30 +94,39 @@ const createElement = (tag, className) => {
 const createAlternative = (item) => {
     const alternative = createElement('button', 'alternative btn btn-outline-light w-100 text-start my-1');
     alternative.innerHTML = item;
+    alternative.setAttribute('movie-data', item);
     alternative.addEventListener('click', checkAnswer);
-
     return alternative;
 }
 
-const checkAnswer = () => {
-    const alternative = document.querySelectorAll(".alternative");
-    const answer = document.querySelector(".answer");
+const checkAnswer = ({target}) => {
 
-    alternative.forEach(element => {
-        if (element.innerHTML === movieName) {
+    document.querySelectorAll(".alternative").forEach(element => {
+        if (element.getAttribute('movie-data') === movieName) {
             element.classList.remove('btn-outline-light');
             element.classList.add('btn-success');
+            element.style.pointerEvents = "none";
         } else {
             element.classList.remove('btn-outline-light');
             element.classList.add('btn-danger');
+            element.style.pointerEvents = "none";
         }
     });
 
+    const answer = document.getElementById("answerScore");
+    document.getElementById("selectedAlternative").innerHTML = "Você selecionou: (" + target.getAttribute('movie-data') + ")";
+
+    if(target.getAttribute('movie-data') === movieName){
+        answer.innerHTML = "Você acertou!";
+        answer.classList.add("text-success");
+    } else {
+        answer.innerHTML = "Você errou!"
+        answer.classList.add("text-danger");
+    }
+
     alternativesParent.classList.add('col-md-6');
-    answer.style.display = "block";
-    const retry = createElement('button', 'btn btn-primary w-100 my-1');
-    answer.appendChild(retry);
-    retry.innerHTML = "Jogar Novamente"
+    document.querySelector(".movie_data").style.display = "block";
+    const retry = document.getElementById("playAgain");
     retry.addEventListener("click", resetGame)
 }
 
@@ -128,10 +138,11 @@ const movieData = async () => {
         const similar = await getSimilarMovies(res.id);
         const alternatives = [movieName, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
         const shuffledArray = shuffle(alternatives);
+        loading.style.display = "none";
         movieBackdrop.innerHTML = '<img class="movie__backdropImage" src="https://www.themoviedb.org/t/p/original' + movie.backdrop_path + '" alt="selected_movie"/>';
         shuffledArray.forEach(item => {
             const alternative = createAlternative(item);
-            alternativesParent.appendChild(alternative)
+            alternativesParent.appendChild(alternative);
         });
         movieTitle.innerHTML = '<p><span class="fw-bold">Título: </span>' + movie.title + '</p>';
 
@@ -150,7 +161,12 @@ const movieData = async () => {
             movieRevenue.innerHTML = '<p><span class="fw-bold">Bilheteria: </span>' + movie.revenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' }); + '</p>';
         }
         movieRuntime.innerHTML = '<p><span class="fw-bold">Duração: </span>' + movie.runtime + ' minutos</p>';
-        movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + language[movie.spoken_languages[0].english_name] + '</p>';
+        if(language[movie.spoken_languages[0].english_name] === undefined){
+            movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + movie.spoken_languages[0].english_name + '</p>';
+        } else {
+            movieSpoken.innerHTML = '<p><span class="fw-bold">Língua Original: </span>' + language[movie.spoken_languages[0].english_name] + '</p>';
+        }
+        
     } catch (err) {
         location.reload();
     }
@@ -161,6 +177,7 @@ const resetGame = () => {
 }
 
 window.onload = () => {
+
     movieData();
 }
 
