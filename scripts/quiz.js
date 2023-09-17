@@ -148,6 +148,7 @@ const checkScore = () => {
         document.getElementById("currentScore").innerHTML = localStorage.getItem("coderflix-score");
     } else {
         localStorage.setItem("coderflix-score", 0);
+        document.getElementById("currentScore").innerHTML = localStorage.getItem("coderflix-score");
     }
 }
 
@@ -156,6 +157,7 @@ const checkRecord = () => {
         document.getElementById("currentRecord").innerHTML = localStorage.getItem("coderflix-record");
     } else {
         localStorage.setItem("coderflix-record", 0);
+        document.getElementById("currentRecord").innerHTML = localStorage.getItem("coderflix-record");
     }
 }
 
