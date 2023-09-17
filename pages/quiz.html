@@ -47,11 +47,21 @@
     </nav>
   </header>
 
-  <div class="main container mt-5 py-5">
-    <h2 class="px-4 pb-2 border-bottom text-white title">QUIZ - Qual o filme abaixo?</h2>
-    <div class="container text-white">
+  <div class="main container mt-5 py-5 text-white">
+    <h2 class="px-4 pb-2 border-bottom title">QUIZ - Qual o filme abaixo?</h2>
+    
+    <div class="container">
+      
       <div class="row justify-content-center">
         <div class="alternatives col-12 col-md-6">
+          <div class="row text-center fw-bold fs-5">
+            <div class="col-6">
+              <p class="scoreboard">Placar: <span id="currentScore"></span> pts</p>
+            </div>
+            <div class="col-6">
+              <p class="scoreboard">Recorde: <span id="currentRecord"></span> pts</p>
+            </div>
+          </div>
           <p id="loading" class="text-center">Carregando filme...</p>
           <div class="movie__backdrop mb-3"></div>
         </div>

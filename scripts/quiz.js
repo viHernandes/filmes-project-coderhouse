@@ -116,12 +116,25 @@ const checkAnswer = ({target}) => {
     const answer = document.getElementById("answerScore");
     document.getElementById("selectedAlternative").innerHTML = "Você selecionou: (" + target.getAttribute('movie-data') + ")";
 
+    let score = parseInt(localStorage.getItem("coderflix-score"));
     if(target.getAttribute('movie-data') === movieName){
         answer.innerHTML = "Você acertou!";
         answer.classList.add("text-success");
+        score = score + 1;
+        localStorage.setItem("coderflix-score", parseInt(score))
+        document.getElementById("currentScore").innerHTML = score
     } else {
         answer.innerHTML = "Você errou!"
         answer.classList.add("text-danger");
+        if(localStorage.getItem("coderflix-record")){
+            let record = parseInt(localStorage.getItem("coderflix-record"));
+            if(score > record){
+                localStorage.setItem("coderflix-record", parseInt(score));
+            }
+        } else {
+            localStorage.setItem("coderflix-record", parseInt(score));
+        }
+        localStorage.setItem("coderflix-score", 0);
     }
 
     alternativesParent.classList.add('col-md-6');
@@ -130,11 +143,27 @@ const checkAnswer = ({target}) => {
     retry.addEventListener("click", resetGame)
 }
 
+const checkScore = () => {
+    if(localStorage.getItem("coderflix-score")){
+        document.getElementById("currentScore").innerHTML = localStorage.getItem("coderflix-score");
+    } else {
+        localStorage.setItem("coderflix-score", 0);
+    }
+}
+
+const checkRecord = () => {
+    if(localStorage.getItem("coderflix-record")){
+        document.getElementById("currentRecord").innerHTML = localStorage.getItem("coderflix-record");
+    } else {
+        localStorage.setItem("coderflix-record", 0);
+    }
+}
+
 const movieData = async () => {
     try {
         const res = await getMovies();
-        movieName = res.title;
         const movie = await getMovieById(res.id);
+        movieName = movie.title;
         const similar = await getSimilarMovies(res.id);
         const alternatives = [movieName, similar[0].title, similar[1].title, similar[2].title, similar[3].title];
         const shuffledArray = shuffle(alternatives);
@@ -177,7 +206,8 @@ const resetGame = () => {
 }
 
 window.onload = () => {
-
+    checkScore();
+    checkRecord();
     movieData();
 }
 
