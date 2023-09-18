@@ -6,6 +6,10 @@
     opacity: 0.8;
 }
 
+#series_poster {
+    border-radius: 10px;
+}
+
 @media screen and (min-width: 992px) and (max-width: 1199px){
     .tile {
         margin: 0 1px 0 1px;
