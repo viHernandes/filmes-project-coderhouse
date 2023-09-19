@@ -212,13 +212,3 @@ window.onload = () => {
     checkRecord();
     movieData();
 }
-
-
-
-
-
-
-
-
-
-
