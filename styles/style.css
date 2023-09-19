@@ -23,7 +23,7 @@ body {
     max-width: 100%;
     object-fit: cover;
     height: 200%;
-    max-height: 160vh;
+    max-height: 180vh;
 }
 
 .content {
@@ -54,20 +54,14 @@ body {
     max-width: 40px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .initial__bg {
-        max-height: 165vh;
-    }
-}
-
 @media screen and (min-width: 992px){
     .initial__bg {
-        max-height: 120vh;
+        max-height: 140vh;
     }
 }
 
 @media screen and (min-width: 1200px){
     .initial__bg {
-        max-height: 110vh;
+        max-height: 125vh;
     }
 }
