@@ -1,5 +1,6 @@
 let array_movies = [];
 let page = 1;
+let counter = 0;
 
 const genres = {
     "28": { "name": "Ação" },
@@ -24,9 +25,7 @@ const genres = {
 }
 
 const getMovies = async () => {
-
     const response = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=818306944e112ccf75d496086ac6c42e&language=pt-BR&with_origin_country=US&without_genres=10767%2C%2010764&page=' + page);
-
     if (response.status === 200) {
         const data = await response.json();
         return data.results;
@@ -35,7 +34,6 @@ const getMovies = async () => {
 }
 
 const getTrailer = async (id) => {
-
     const response = await fetch('https://api.themoviedb.org/3/movie/' + id + '/videos?api_key=818306944e112ccf75d496086ac6c42e&language=pt-BR');
     if (response.status === 200) {
         const data = await response.json();
@@ -130,14 +128,15 @@ const handleLoad = ({target}) => {
 const loadMovies = async () => {
     const movies_wrapper = document.getElementById("movies_wrapper");
     const movies = await getMovies();
-    page = page + 1;
-    array_movies = movies;
-
+    movies.forEach(element => {
+        array_movies.push(element);
+    });
     movies.forEach((element, i) => {
-        const tile = createTile(element, i);
+        const tile = createTile(element, i + (counter*20));
         movies_wrapper.appendChild(tile);
     });
-
+    page = page + 1;
+    counter = counter + 1;
     const button = createElement("button", "btn");
     button.classList.add("btn-primary", "mt-5");
     button.innerHTML = "Carregar Mais...";

@@ -1,5 +1,6 @@
 let array_series = [];
 let page = 1;
+let counter = 0;
 
 const genres = {
     "10759": { "name": "Ação e Aventura" },
@@ -114,13 +115,15 @@ const handleLoad = ({target}) => {
 const loadSeries = async () => {
     const series_wrapper = document.getElementById("series_wrapper");
     const series = await getSeries();
-    page = page + 1;
-    array_series = series;
-
+    series.forEach(element => {
+        array_series.push(element);
+    });
     series.forEach((element, i) => {
-        const tile = createTile(element, i);
+        const tile = createTile(element, i + (counter*20));
         series_wrapper.appendChild(tile);
     });
+    page = page + 1;
+    counter = counter + 1;
 
     const button = createElement("button", "btn");
     button.classList.add("btn-primary", "mt-5");
