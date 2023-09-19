@@ -22,8 +22,8 @@ body {
     width: 100%;
     max-width: 100%;
     object-fit: cover;
-    height: 100%;
-    max-height: 100%;
+    height: 200%;
+    max-height: 160vh;
 }
 
 .content {
@@ -50,9 +50,24 @@ body {
     background-color: rgba(33, 37, 41, 0.5);
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .inicial__bg {
+.icons {
+    max-width: 40px;
+}
 
-        height: 110vh;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .initial__bg {
+        max-height: 165vh;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .initial__bg {
+        max-height: 120vh;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .initial__bg {
+        max-height: 110vh;
     }
 }

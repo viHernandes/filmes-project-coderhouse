@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoderFlix - Quiz</title>
+  <title>CoderFlix - Filmes Populares</title>
   <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href='../styles/bg-effect.css'>
-  <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href='../styles/quiz.css'>
+  <link rel="stylesheet" href='../styles/style.css'>
+  <link rel="stylesheet" href='../styles/movies.css'>
+
 </head>
 
 <body>
@@ -38,7 +39,7 @@
             <li class="nav-item">
               <a class="nav-link" href="./movies.html">Filmes Populares</a>
             </li>
-<li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="./series.html">Séries Populares</a>
             </li>
             <li class="nav-item">
@@ -50,41 +51,53 @@
     </nav>
   </header>
 
-  <div class="main container mt-5 py-5 text-white">
-    <h2 class="px-4 pb-2 border-bottom title">QUIZ - Qual o filme abaixo?</h2>
-    
-    <div class="container">
-      
-      <div class="row justify-content-center">
-        <div class="alternatives col-12 col-md-6">
-          <div class="row text-center fw-bold fs-5">
-            <div class="col-6">
-              <p class="scoreboard">Placar: <span id="currentScore"></span> pts</p>
+  <div class="main container px-4 mt-5 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom text-white title">Filmes Populares</h2>
+    <div class="row justify-content-center">
+
+      <div class="row justify-content-center text-center text-white" id="movies_wrapper">
+        <p>Clique no filme para ver mais informações!</p>
+      </div>
+
+      <div class="modal fade" id="moviesModal" tabindex="-1" aria-labelledby="moviesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="moviesModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="col-6">
-              <p class="scoreboard">Recorde: <span id="currentRecord"></span> pts</p>
+            <div class="modal-body">
+              <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-sm-8 col-md-8 col-lg-4 col-xl-4 mb-3">
+                  <img src="" alt="poster" id="movies_poster" class="w-100">
+                </div>
+                <div class="col-12 col-lg-8 col-xl-8 ">
+                  <p id="movies_name"></p>
+                  <p id="movies_genre"></p>
+                  <p id="movies_date"></p>
+                  <p id="movies_origin">País de Origem: <b>Estados Unidos</b></p>
+                  <p id="movies_language">Língua Original: <b>Inglês</b></p>
+                  <p id="movies_sinopse"></p>
+                  <p id="movies_nota"></p>
+                  <p id="movies_count"></p>
+                  <p id="movies_popularity"></p>
+                  <div class="row mb-3">
+                    <p>Opções de Trailer:</p>
+                    <div class="col-6">
+                      <a href="" class="btn btn-primary" id="trailer1" target="_blank">Trailer</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="" class="btn btn-primary" id="trailer2" target="_blank">Trailer Alternativo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div id="movies_tmdb"></div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
-          <p id="loading" class="text-center">Carregando filme...</p>
-          <div class="movie__backdrop mb-3"></div>
-        </div>
-        <div class="movie_data col-12 col-md-6">
-          <div id="answered" class="text-center mb-3">
-            <p id="answerScore" class=" fs-5 fw-bold badge bg-light"></p>
-            <p id="selectedAlternative"></p>
-          </div>
-          <button id="playAgain" class="btn btn-primary w-100 mb-3">Jogar Novamente</button>
-          <div class="movie__title"></div>
-          <div class="movie__overview"></div>
-          <div class="movie__genres"></div>
-          <div class="movie__id"></div>
-          <div class="movie__release"></div>
-          <div class="movie__revenue"></div>
-          <div class="movie__budget"></div>
-          <div class="movie__tagline"></div>
-          <div class="movie__runtime"></div>
-          <div class="movie__language"></div>
-          <div class="movie__spoken"></div>
         </div>
       </div>
     </div>
@@ -108,7 +121,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"></script>
-    <script src="../scripts/quiz.js"></script>
+    <script src="/scripts/movies.js"></script>
 </body>
 
 </html>

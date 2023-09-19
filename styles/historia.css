@@ -14,7 +14,9 @@ body {
 }
 
 .image {
-    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .final {
@@ -24,6 +26,13 @@ body {
     padding: 10px;
     bottom: 0;
     margin-bottom: 0;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
 }
 
 @media screen and (max-width: 768px) {

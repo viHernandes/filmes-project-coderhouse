@@ -17,7 +17,7 @@ const genres = {
     "10766": { "name": "Soap" },
     "10767": { "name": "Talk Show" },
     "10768": { "name": "Guerra e Política" },
-    "37": { "name": "Velho Oeste" },
+    "37": { "name": "Velho Oeste" }
 }
 
 const getSeries = async () => {
