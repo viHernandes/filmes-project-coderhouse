@@ -115,8 +115,21 @@ const editModal = async ({target}) => {
     document.getElementById('movies_count').innerHTML = "Votos: <b>" + array_movies[pos].vote_count + "</b>";
     document.getElementById('movies_popularity').innerHTML = "Popularidade: <b>" + array_movies[pos].popularity + "</b>";
     const trailerUrl = await getTrailer(array_movies[pos].id);
-    document.getElementById('trailer1').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[0].key);
-    document.getElementById('trailer2').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[1].key);
+    if(trailerUrl[0]){
+        document.getElementById('options').style.display = "block";
+        document.getElementById('trailer1').style.display = "block";
+        document.getElementById('trailer1').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[0].key);
+    } else {
+        document.getElementById('options').style.display = "none";
+        document.getElementById('trailer1').style.display = "none";
+    }
+    if(trailerUrl[1]){
+        document.getElementById('trailer2').style.display = "block";
+        document.getElementById('trailer2').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[1].key);
+    } else {
+        document.getElementById('trailer2').style.display = "none";
+    }
+    
 }
 
 const handleLoad = ({target}) => {
