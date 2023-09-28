@@ -71,7 +71,11 @@ const createTile = (movie, position) => {
     tile.appendChild(title);
 
     // Define o caminho da imagem no tile
-    image.src = poster_path + movie.poster_path;
+    if (movie.poster_path) {
+        image.src = poster_path + movie.poster_path;
+    } else {
+        image.src = "../imagens/noposter.jpg";
+    }
 
     // Atribui o nome do Filme
     title.innerHTML = movie.title;
@@ -82,18 +86,21 @@ const createTile = (movie, position) => {
     return tile;
 }
 
-const editModal = async ({target}) => {
+const editModal = async ({ target }) => {
     const pos = target.parentNode.parentNode.getAttribute('position');
     const imagePath = "https://www.themoviedb.org/t/p/original";
-    // document.getElementById('movies_backdrop').src = imagePath + array_movies[pos].backdrop_path;
-    document.getElementById('movies_poster').src = imagePath + array_movies[pos].poster_path;
+    if(array_movies[pos].poster_path){
+        document.getElementById('movies_poster').src = imagePath + array_movies[pos].poster_path;
+    } else {
+        document.getElementById('movies_poster').src = "../imagens/noposter.jpg";
+    }
     document.getElementById('moviesModalLabel').innerHTML = "Título: " + array_movies[pos].title;
     const redirectToTmdb = () => {
-        let linkName = array_movies[pos].original_title.replace(/[:$&/]/g," ");
+        let linkName = array_movies[pos].original_title.replace(/[:$&/]/g, " ");
         linkName = linkName.replace(new RegExp("   ", "g"), " ").replace(new RegExp("  ", "g"), " ").replace(new RegExp(" ", "g"), "-").replace(new RegExp("'", "g"), "-").toLowerCase();
         return linkName;
-    } 
-    document.getElementById('movies_tmdb').innerHTML = "<a href='https://www.themoviedb.org/movie/" + array_movies[pos].id + "-" + redirectToTmdb() + "?language=pt-BR' target='_blank' class='btn btn-primary'>Abrir no TMDB</a>" ;
+    }
+    document.getElementById('movies_tmdb').innerHTML = "<a href='https://www.themoviedb.org/movie/" + array_movies[pos].id + "-" + redirectToTmdb() + "?language=pt-BR' target='_blank' class='btn btn-primary'>Abrir no TMDB</a>";
     document.getElementById('movies_name').innerHTML = "Nome Original: <b>" + array_movies[pos].original_title + "</b>";
     const generos = array_movies[pos].genre_ids;
     const getGenre = () => {
@@ -115,7 +122,7 @@ const editModal = async ({target}) => {
     document.getElementById('movies_count').innerHTML = "Votos: <b>" + array_movies[pos].vote_count + "</b>";
     document.getElementById('movies_popularity').innerHTML = "Popularidade: <b>" + array_movies[pos].popularity + "</b>";
     const trailerUrl = await getTrailer(array_movies[pos].id);
-    if(trailerUrl[0]){
+    if (trailerUrl[0]) {
         document.getElementById('options').style.display = "block";
         document.getElementById('trailer1').style.display = "block";
         document.getElementById('trailer1').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[0].key);
@@ -123,16 +130,16 @@ const editModal = async ({target}) => {
         document.getElementById('options').style.display = "none";
         document.getElementById('trailer1').style.display = "none";
     }
-    if(trailerUrl[1]){
+    if (trailerUrl[1]) {
         document.getElementById('trailer2').style.display = "block";
         document.getElementById('trailer2').setAttribute("href", "https://www.youtube.com/watch?v=" + trailerUrl[1].key);
     } else {
         document.getElementById('trailer2').style.display = "none";
     }
-    
+
 }
 
-const handleLoad = ({target}) => {
+const handleLoad = ({ target }) => {
     loadMovies()
     target.style.display = "none";
 }
@@ -145,7 +152,7 @@ const loadMovies = async () => {
         array_movies.push(element);
     });
     movies.forEach((element, i) => {
-        const tile = createTile(element, i + (counter*20));
+        const tile = createTile(element, i + (counter * 20));
         movies_wrapper.appendChild(tile);
     });
     page = page + 1;

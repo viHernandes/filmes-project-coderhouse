@@ -61,7 +61,11 @@ const createTile = (series, position) => {
     tile.appendChild(title);
 
     // Define o caminho da imagem no tile
-    image.src = poster_path + series.poster_path;
+    if(series.poster_path){
+        image.src = poster_path + series.poster_path;
+    } else {
+        image.src = "../imagens/noposter.jpg";
+    }
 
     // Atribui o nome da série
     title.innerHTML = series.name;
@@ -75,8 +79,11 @@ const createTile = (series, position) => {
 const editModal = ({target}) => {
     const pos = target.parentNode.parentNode.getAttribute('position');
     const imagePath = "https://www.themoviedb.org/t/p/original";
-    // document.getElementById('series_backdrop').src = imagePath + array_series[pos].backdrop_path;
-    document.getElementById('series_poster').src = imagePath + array_series[pos].poster_path;
+    if(array_series[pos].poster_path){
+        document.getElementById('series_poster').src = imagePath + array_series[pos].poster_path;
+    } else {
+        document.getElementById('series_poster').src = "../imagens/noposter.jpg";
+    }
     document.getElementById('seriesModalLabel').innerHTML = "Título: " + array_series[pos].name;
     const redirectToTmdb = () => {
         let linkName = array_series[pos].original_name.replace(/[:$&/]/g," ");
